@@ -13,7 +13,7 @@ class Controller_Main extends bun.class.$_appname {
             "/api": "/action/api/Api.js"
         });
         this.Routes.get({
-            "/": "/action/show/Example.js"
+            "/*": "/action/show/Example.js"
         });
     }
 }

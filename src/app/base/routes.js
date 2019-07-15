@@ -14,6 +14,10 @@ const routes = [
         children: [
             {
                 path: '/',
+                redirect: '/$_appname/home'
+            },
+            {
+                path: 'home',
                 component: () =>
                     import(/* webpackChunkName: "home" */ '@/app/page/home'),
                 meta: {

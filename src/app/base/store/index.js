@@ -6,7 +6,7 @@ import mutations from './config/mutations';
 Vue.use(Vuex);
 // 可以用module拆分store，暂时不需要
 export function createStore (context) {
-    return new vuex.Store({
+    return new Vuex.Store({
          actions,
          mutations,
          state,
