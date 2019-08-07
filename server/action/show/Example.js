@@ -5,14 +5,14 @@
  * vue应用 demo
  */
 
-class Example extends bun.class.$_appname {
+class Action_Show_Example extends Common_BasePage {
     constructor() {
         super();
     }
     async execute(ctx) {
-        const templatePath = bun.TPL_PATH + '/$_appname/template.html';
-        const clientManifestPath = bun.ROOT_PATH + '/static/$_appname/vue-ssr-client-manifest.json';
-        const serverManifestPath = bun.ROOT_PATH + '/static/$_appname/vue-ssr-server-bundle.json';
+        const templatePath = bun.globalPath.TPL_PATH + '/$_appname/template.html';
+        const clientManifestPath = bun.globalPath.ROOT_PATH + '/static/$_appname/vue-ssr-client-manifest.json';
+        const serverManifestPath = bun.globalPath.ROOT_PATH + '/static/$_appname/vue-ssr-server-bundle.json';
 
         let state = {
             home: {
@@ -52,4 +52,4 @@ class Example extends bun.class.$_appname {
     }
 }
 
-module.exports = Example;
+module.exports = Action_Show_Example;

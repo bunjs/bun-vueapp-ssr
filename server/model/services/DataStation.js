@@ -3,13 +3,13 @@
  * @desc 获取前端路由对应的model层类名
  */
 
-class Services_DataStation extends bun.class.$_appname {
+class Model_Services_DataStation extends bun.class.$_appname {
     constructor() {
         super();
         this.interfaceMapping = {
             "/example": {
-                "/": "Services_Page_ExampleHomeShow",
-                "/one": "Services_Page_ExampleOneShow"
+                "/": "Model_Services_Page_ExampleHomeShow",
+                "/one": "Model_Services_Page_ExampleOneShow"
             }
         };
     }
@@ -27,4 +27,4 @@ class Services_DataStation extends bun.class.$_appname {
         }
     }
 }
-module.exports = Services_DataStation;
+module.exports = Model_Services_DataStation;

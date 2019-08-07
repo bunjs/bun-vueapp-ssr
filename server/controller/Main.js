@@ -10,9 +10,7 @@ class Controller_Main extends bun.class.$_appname {
             "/api": "/action/api/Api.js"
         });
         this.Routes.get({
-            "/api": "/action/api/Api.js"
-        });
-        this.Routes.get({
+            "/api": "/action/api/Api.js",
             "/*": "/action/show/Example.js"
         });
     }
