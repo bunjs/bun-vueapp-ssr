@@ -5,7 +5,7 @@
  * vue应用 demo
  */
 
-class Common_BasePage extends bun.class.$_appname {
+class Common_BasePage extends bun.class['$_appname'] {
     constructor() {
         super();
         this.needRegister = true;
