@@ -1,6 +1,7 @@
 import {
 	createApp
 } from './index'
+import merge from 'deepmerge';
 
 export default context => {
 	// 因为有可能会是异步路由钩子函数或组件，所以我们将返回一个 Promise，
@@ -26,7 +27,14 @@ export default context => {
 					code: 404
 				})
 			}
-			store.replaceState(context.state);
+			store.replaceState(
+				merge(store.state, context.state, {
+	                arrayMerge: function(store, saved) {
+	                    return saved;
+	                },
+	                clone: false,
+	            })
+			);
 			// 对所有匹配的路由组件调用 `asyncData()`
 			// Promise.all(matchedComponents.map(Component => {
 			// 	if (Component.asyncData) {
