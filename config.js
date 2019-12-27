@@ -2,11 +2,15 @@ module.exports = {
     dirname: __dirname,
     // 当需要部署到bun框架时，这里可以设为true
     isbun: true,
+    // 是否是ssr
     ssr: true,
+    // 是否是单个应用单个服务
+    isSingle: true,
+    frame: 'vue',
     entry: {
-        index: './src/entry/entry-client.js',
+        index: './client/entry/entry-client.js',
     },
-    serverEntry: './src/entry/entry-server.js',
+    serverEntry: './client/entry/entry-server.js',
     output: './build/static',
     template: '',
     appname: '$_appname',
@@ -29,8 +33,8 @@ module.exports = {
     optimizeCSS: true, // 开发模式下无效
     supportFileType: ['vue', 'less'], // 需要支持的文件格式
     globalPath: {
-        '@common': './src/app/common',
-        '@': './src'
+        '@common': './client/app/common',
+        '@': './client'
     },
     definePlugin: {
         // 是否为生产环境
