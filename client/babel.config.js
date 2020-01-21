@@ -1,18 +1,21 @@
-module.exports = {
-    presets: [
-        [
-            '@babel/preset-env',
-            {
-                targets: { browsers: ["last 2 versions", "safari >= 7"] },
-                modules: 'commonjs', // 为了支持ssr统一使用commonjs规范
-                corejs: '3.0.0',
-                debug: false,
-                useBuiltIns: 'usage', // 是否开启自动支持 polyfill
-            },
+module.exports = function (api) {
+    api.cache(true);
+    return {
+        presets: [
+            ['@babel/preset-env', {
+                "targets": {
+                    browsers: ['> 1%', 'last 2 versions', 'ie >= 10'],
+                },
+            }]
         ],
-    ],
-    plugins: [
-        "@babel/plugin-syntax-dynamic-import",
-        ["component", { "libraryName": "mint-ui", "style": true }]
-    ],
-};
+        plugins: [
+            ["@babel/plugin-transform-runtime", {
+                corejs: 3
+            }],
+            "@babel/plugin-syntax-dynamic-import",
+            ["@babel/plugin-proposal-decorators", {
+                "legacy": true
+            }],
+        ]
+    };
+}
